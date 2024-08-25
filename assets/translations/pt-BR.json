@@ -1,4 +1,7 @@
 {
     "intro_title": "Bem-vindo ao digitalizador de PDF",
-    "intro_button": "Começar"
+    "intro_button": "Começar",
+    "text_appbar": "Digitalizar PDF",
+    "darkmode": "Modo Escuro",
+    "about": "Sobre"
 }

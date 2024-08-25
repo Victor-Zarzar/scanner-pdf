@@ -1,7 +1,6 @@
 import "package:easy_localization/easy_localization.dart";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
-import 'package:getwidget/getwidget.dart';
 import "package:scan_pdf/pages/HomePage/home_page.dart";
 
 class IntroPage extends StatefulWidget {
@@ -40,7 +39,19 @@ class _IntroPageState extends State<IntroPage> {
               child: SizedBox(
                 height: 35,
                 width: 180,
-                child: GFButton(
+                child: TextButton(
+                  style: ButtonStyle(
+                    foregroundColor:
+                        WidgetStateProperty.all<Color>(Colors.blue),
+                  ),
+                  child: Text(
+                    "intro_button".tr(),
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
+                      fontSize: 11,
+                    ),
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -49,13 +60,6 @@ class _IntroPageState extends State<IntroPage> {
                       ),
                     );
                   },
-                  text: "intro_button".tr(),
-                  textStyle: TextStyle(
-                    color: Colors.red,
-                    fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
-                    fontSize: 11,
-                  ),
-                  color: Colors.blue,
                 ),
               ),
             ),

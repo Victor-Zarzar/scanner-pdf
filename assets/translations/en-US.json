@@ -1,4 +1,7 @@
 {
     "intro_title": "Welcome to Scan PDF",
-    "intro_button": "Get Started"
+    "intro_button": "Get Started",
+    "text_appbar": "Scan PDF",
+    "darkmode": "Dark Mode",
+    "about": "About"
 }
