@@ -1,7 +1,7 @@
-import "package:easy_localization/easy_localization.dart";
-import "package:flutter/material.dart";
-import "package:google_fonts/google_fonts.dart";
-import "package:scan_pdf/pages/HomePage/home_page.dart";
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:scan_pdf/pages/HomePage/home_page.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
@@ -27,10 +27,10 @@ class _IntroPageState extends State<IntroPage> {
             Text(
               "intro_title".tr(),
               style: GoogleFonts.jetBrainsMono(
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
-                  color: Colors.red,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -39,15 +39,17 @@ class _IntroPageState extends State<IntroPage> {
               child: SizedBox(
                 height: 35,
                 width: 180,
-                child: TextButton(
-                  style: ButtonStyle(
-                    foregroundColor:
-                        WidgetStateProperty.all<Color>(Colors.blue),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black26,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                   child: Text(
                     "intro_button".tr(),
                     style: TextStyle(
-                      color: Colors.red,
+                      color: Colors.white,
                       fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
                       fontSize: 11,
                     ),
