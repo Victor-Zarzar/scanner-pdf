@@ -23,12 +23,14 @@ class _IntroPageState extends State<IntroPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Image.asset('assets/imgs/icon.png'),
+            Image.asset(
+              'assets/imgs/icon.png',
+            ),
             Text(
               "intro_title".tr(),
               style: GoogleFonts.jetBrainsMono(
                 textStyle: const TextStyle(
-                  fontSize: 14,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
@@ -39,19 +41,24 @@ class _IntroPageState extends State<IntroPage> {
               child: SizedBox(
                 height: 35,
                 width: 180,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black26,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                child: ElevatedButton.icon(
+                  icon: const Icon(
+                    Icons.next_plan,
+                    color: Colors.white,
                   ),
-                  child: Text(
+                  iconAlignment: IconAlignment.end,
+                  label: Text(
                     "intro_button".tr(),
                     style: TextStyle(
                       color: Colors.white,
                       fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
-                      fontSize: 11,
+                      fontSize: 14,
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey[800],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   onPressed: () {

@@ -19,14 +19,14 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: Colors.black26,
+        backgroundColor: Colors.blueGrey[800],
         title: Text(
           'text_appbar'.tr(),
           style: GoogleFonts.jetBrainsMono(
             textStyle: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
         ),
@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
             builder: (context) => IconButton(
               icon: const Icon(
                 Icons.settings,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
@@ -47,13 +47,17 @@ class _HomePageState extends State<HomePage> {
       drawer: const DrawerComponent(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black26,
+        backgroundColor: Colors.blueGrey[800],
         tooltip: 'Increment',
         onPressed: () {},
-        child: const Icon(Icons.add, size: 28),
+        child: const Icon(
+          Icons.add,
+          size: 28,
+          color: Colors.white,
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.black26,
+        color: Colors.blueGrey[800],
         shape: const CircularNotchedRectangle(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -62,14 +66,14 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {},
               icon: const Icon(
                 Icons.home,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
             IconButton(
               onPressed: () {},
               icon: const Icon(
                 Icons.wrap_text_sharp,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ],
