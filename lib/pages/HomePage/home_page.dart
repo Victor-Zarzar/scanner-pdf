@@ -16,10 +16,11 @@ class _HomePageState extends State<HomePage> {
     double myHeight = MediaQuery.of(context).size.height;
     double myWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: Colors.blueGrey[800],
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         title: Text(
           'text_appbar'.tr(),
           style: GoogleFonts.jetBrainsMono(
@@ -47,7 +48,7 @@ class _HomePageState extends State<HomePage> {
       drawer: const DrawerComponent(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blueGrey[800],
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         tooltip: 'Increment',
         onPressed: () {},
         child: const Icon(
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.blueGrey[800],
+        color: Theme.of(context).colorScheme.secondary,
         shape: const CircularNotchedRectangle(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

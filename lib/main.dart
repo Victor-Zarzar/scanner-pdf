@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:scan_pdf/components/ThemeProvider/theme_provider.dart';
 import 'package:scan_pdf/pages/IntroPage/intro_page.dart';
 
 void main() async {
@@ -12,8 +14,13 @@ void main() async {
         Locale('pt', 'BR'),
       ],
       path: 'assets/translations',
-      fallbackLocale: const Locale('en-US'),
-      child: const MyApp(),
+      fallbackLocale: const Locale(
+        'en-US',
+      ),
+      child: ChangeNotifierProvider(
+        create: (context) => ThemeProvider(),
+        child: const MyApp(),
+      ),
     ),
   );
 }
@@ -31,9 +38,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Scanner PDF",
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
+      theme: Provider.of<ThemeProvider>(context).themeData,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,

@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:scan_pdf/components/ThemeProvider/theme_provider.dart';
 import 'package:scan_pdf/pages/AboutPage/about_page.dart';
 
 class DrawerComponent extends StatefulWidget {
@@ -39,11 +41,13 @@ class _DrawerComponentState extends State<DrawerComponent> {
               ),
             ),
             ListTile(
-              trailing: Switch(
-                activeColor: Colors.grey,
-                inactiveTrackColor: Colors.grey,
-                value: true,
-                onChanged: (bool value) {},
+              trailing: Consumer<ThemeProvider>(
+                builder: (context, themeProvider, child) {
+                  return Switch(
+                    value: themeProvider.isDarkMode,
+                    onChanged: (value) => themeProvider.toggleTheme(),
+                  );
+                },
               ),
               leading: const Icon(Icons.dark_mode),
               title: Text(
