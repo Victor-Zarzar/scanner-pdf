@@ -3,5 +3,8 @@
     "intro_button": "Get Started",
     "text_appbar": "Scan PDF",
     "darkmode": "Dark Mode",
-    "about": "About"
+    "about": "About",
+    "aboutapp": "This app is developed to scan any image and convert it into a PDF.",
+    "developed": "Developed by: www.victorzarzar.com.br",
+    "launch_error": "Could not launch"
 }

@@ -3,5 +3,8 @@
     "intro_button": "Começar",
     "text_appbar": "Digitalizar PDF",
     "darkmode": "Modo Escuro",
-    "about": "Sobre"
+    "about": "Sobre",
+    "aboutapp": "Este aplicativo foi desenvolvido para digitalizar qualquer imagem e convertê-la em PDF.",
+    "developed": "Desenvolvido por: www.victorzarzar.com.br",
+    "launch_error": "Não foi possível abrir"
 }

@@ -11,13 +11,12 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-  // Function to launch URL using Uri
   Future<void> _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     } else {
-      throw 'Could not launch $url';
+      throw '${'launch_error'.tr()} $url';
     }
   }
 
@@ -45,18 +44,36 @@ class _AboutPageState extends State<AboutPage> {
         height: myHeight,
         width: myWidth,
         child: Center(
-          child: GestureDetector(
-            onTap: () {
-              _launchURL('https://www.victorzarzar.com.br');
-            },
-            child: Text(
-              'Developed by: www.victorzarzar.com.br',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.blue,
-                decoration: TextDecoration.underline,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'aboutapp'.tr(),
+                style: GoogleFonts.jetBrainsMono(
+                  textStyle: TextStyle(
+                    fontSize: 14,
+                    color: isDarkMode ? Colors.white : Colors.black,
+                  ),
+                ),
+                textAlign: TextAlign.center,
               ),
-            ),
+              const SizedBox(height: 80),
+              GestureDetector(
+                onTap: () {
+                  _launchURL('https://www.victorzarzar.com.br');
+                },
+                child: Text(
+                  'developed'.tr(),
+                  style: GoogleFonts.jetBrainsMono(
+                    textStyle: TextStyle(
+                      fontSize: 14,
+                      color: isDarkMode ? Colors.white : Colors.black,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

@@ -3,5 +3,8 @@
     "intro_button": "Comenzar",
     "text_appbar": "Escanear PDF",
     "darkmode": "Modo Oscuro",
-    "acerca de": "Acerca de"
+    "acerca de": "Acerca de",
+    "aboutapp": "Esta aplicación está desarrollada para escanear cualquier imagen y convertirla en PDF.",
+    "developed": "Desarrollado por: www.victorzarzar.com.br",
+    "launch_error": "No se pudo iniciar"
 }
