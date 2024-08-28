@@ -5,20 +5,19 @@ import 'package:provider/provider.dart';
 import 'package:scan_pdf/components/ThemeProvider/theme_provider.dart';
 import 'package:scan_pdf/pages/AboutPage/about_page.dart';
 
-class DrawerComponent extends StatefulWidget {
-  const DrawerComponent({super.key});
+class SettingsPage extends StatefulWidget {
+  const SettingsPage({super.key});
 
   @override
-  State<DrawerComponent> createState() => _DrawerComponentState();
+  State<SettingsPage> createState() => _SettingsPageState();
 }
 
-class _DrawerComponentState extends State<DrawerComponent> {
+class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      child: Drawer(
+    return Scaffold(
+      body: SizedBox(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[

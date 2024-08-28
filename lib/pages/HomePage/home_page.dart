@@ -5,7 +5,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:open_filex/open_filex.dart';
 import 'package:scan_pdf/components/CameraService/camera_service.dart';
-import 'package:scan_pdf/components/Drawer/drawer_app.dart';
+import 'package:scan_pdf/pages/SettingsPage/settings_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -64,6 +64,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -71,27 +72,13 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Theme.of(context).colorScheme.secondary,
         title: Text(
           'text_appbar'.tr(),
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: isDarkMode ? Colors.white : Colors.black,
           ),
         ),
-        actions: [
-          Builder(
-            builder: (context) => IconButton(
-              icon: const Icon(
-                Icons.settings,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            ),
-          ),
-        ],
       ),
-      drawer: const DrawerComponent(),
       body: _cameraService.controller == null ||
               !_cameraService.controller!.value.isInitialized
           ? const Center(child: CircularProgressIndicator())
@@ -104,10 +91,10 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Theme.of(context).colorScheme.secondary,
         tooltip: 'Scan and Open PDF',
         onPressed: _scanAndOpenPDF,
-        child: const Icon(
+        child: Icon(
           Icons.add,
           size: 28,
-          color: Colors.white,
+          color: isDarkMode ? Colors.white : Colors.black,
         ),
       ),
       bottomNavigationBar: BottomAppBar(
@@ -118,16 +105,23 @@ class _HomePageState extends State<HomePage> {
           children: [
             IconButton(
               onPressed: () {},
-              icon: const Icon(
+              icon: Icon(
                 Icons.home,
-                color: Colors.white,
+                color: isDarkMode ? Colors.white : Colors.black,
               ),
             ),
             IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.wrap_text_sharp,
-                color: Colors.white,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SettingsPage(),
+                  ),
+                );
+              },
+              icon: Icon(
+                Icons.settings,
+                color: isDarkMode ? Colors.white : Colors.black,
               ),
             ),
           ],

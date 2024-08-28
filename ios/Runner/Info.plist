@@ -51,5 +51,7 @@
     <string>your usage description here</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Photo library permission is required for barcode scanning.</string>
+	<key>NSAppTransportSecurity</key>
+    <key>NSAllowsArbitraryLoads</key>
 </dict>
 </plist>

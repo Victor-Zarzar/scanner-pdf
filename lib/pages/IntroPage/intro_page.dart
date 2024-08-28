@@ -15,8 +15,8 @@ class _IntroPageState extends State<IntroPage> {
   Widget build(BuildContext context) {
     double myHeight = MediaQuery.of(context).size.height;
     double myWidth = MediaQuery.of(context).size.width;
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SizedBox(
         height: myHeight,
         width: myWidth,
@@ -29,10 +29,10 @@ class _IntroPageState extends State<IntroPage> {
             Text(
               "intro_title".tr(),
               style: GoogleFonts.jetBrainsMono(
-                textStyle: const TextStyle(
+                textStyle: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: isDarkMode ? Colors.white : Colors.black,
                 ),
               ),
             ),
@@ -42,21 +42,22 @@ class _IntroPageState extends State<IntroPage> {
                 height: 35,
                 width: 180,
                 child: ElevatedButton.icon(
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.next_plan,
-                    color: Colors.white,
+                    color: isDarkMode ? Colors.black : Colors.white,
                   ),
                   iconAlignment: IconAlignment.end,
                   label: Text(
                     "intro_button".tr(),
                     style: TextStyle(
-                      color: Colors.white,
+                      color: isDarkMode ? Colors.black : Colors.white,
                       fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
                       fontSize: 14,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueGrey[800],
+                    backgroundColor:
+                        isDarkMode ? Colors.grey[300] : Colors.blueGrey[800],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
