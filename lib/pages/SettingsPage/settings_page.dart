@@ -18,6 +18,7 @@ class _SettingsPageState extends State<SettingsPage> {
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: SizedBox(
+        width: MediaQuery.of(context).size.width,
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -37,6 +38,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   ),
                   Image.asset(
                     'assets/imgs/icon.png',
+                    semanticLabel: '',
                   ),
                 ],
               ),
@@ -52,7 +54,10 @@ class _SettingsPageState extends State<SettingsPage> {
                   );
                 },
               ),
-              leading: const Icon(Icons.dark_mode),
+              leading: const Icon(
+                Icons.dark_mode,
+                semanticLabel: '',
+              ),
               title: Text(
                 'darkmode'.tr(),
                 style: GoogleFonts.jetBrainsMono(
@@ -65,7 +70,10 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.info),
+              leading: const Icon(
+                Icons.info,
+                semanticLabel: '',
+              ),
               title: Text(
                 'about'.tr(),
                 style: GoogleFonts.jetBrainsMono(

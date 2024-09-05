@@ -79,13 +79,19 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: _cameraService.controller == null ||
-              !_cameraService.controller!.value.isInitialized
-          ? const Center(child: CircularProgressIndicator())
-          : RotatedBox(
-              quarterTurns: 1,
-              child: _cameraService.buildCameraPreview(),
-            ),
+      body: Column(
+        children: [
+          Expanded(
+            child: _cameraService.controller == null ||
+                    !_cameraService.controller!.value.isInitialized
+                ? const Center(child: CircularProgressIndicator())
+                : RotatedBox(
+                    quarterTurns: 1,
+                    child: _cameraService.buildCameraPreview(),
+                  ),
+          ),
+        ],
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).colorScheme.secondary,

@@ -58,17 +58,23 @@ class _AboutPageState extends State<AboutPage> {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 80),
-              GestureDetector(
-                onTap: () {
-                  _launchURL('https://www.victorzarzar.com.br');
-                },
-                child: Text(
-                  'developed'.tr(),
-                  style: GoogleFonts.jetBrainsMono(
-                    textStyle: TextStyle(
-                      fontSize: 14,
-                      color: isDarkMode ? Colors.white : Colors.black,
-                      decoration: TextDecoration.underline,
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchURL('https://www.victorzarzar.com.br');
+                    },
+                    child: Text(
+                      'developed'.tr(),
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.jetBrainsMono(
+                        textStyle: TextStyle(
+                          fontSize: 14,
+                          color: isDarkMode ? Colors.white : Colors.black,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
                     ),
                   ),
                 ),
