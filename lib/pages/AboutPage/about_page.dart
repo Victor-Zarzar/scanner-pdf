@@ -43,44 +43,44 @@ class _AboutPageState extends State<AboutPage> {
       body: SizedBox(
         height: myHeight,
         width: myWidth,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Center(
+              child: Text(
                 'aboutapp'.tr(),
                 style: GoogleFonts.jetBrainsMono(
                   textStyle: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     color: isDarkMode ? Colors.white : Colors.black,
                   ),
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 80),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Center(
-                  child: GestureDetector(
-                    onTap: () {
-                      _launchURL('https://www.victorzarzar.com.br');
-                    },
-                    child: Text(
-                      'developed'.tr(),
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.jetBrainsMono(
-                        textStyle: TextStyle(
-                          fontSize: 14,
-                          color: isDarkMode ? Colors.white : Colors.black,
-                          decoration: TextDecoration.underline,
-                        ),
+            ),
+            const SizedBox(height: 80),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    _launchURL('https://www.victorzarzar.com.br');
+                  },
+                  child: Text(
+                    'developed'.tr(),
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.jetBrainsMono(
+                      textStyle: TextStyle(
+                        fontSize: 14,
+                        color: isDarkMode ? Colors.white : Colors.black,
+                        decoration: TextDecoration.underline,
                       ),
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

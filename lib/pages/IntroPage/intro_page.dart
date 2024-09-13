@@ -16,64 +16,74 @@ class _IntroPageState extends State<IntroPage> {
     double myHeight = MediaQuery.of(context).size.height;
     double myWidth = MediaQuery.of(context).size.width;
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      body: SizedBox(
-        height: myHeight,
-        width: myWidth,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Image.asset(
-              'assets/imgs/icon.png',
-            ),
-            Text(
-              "intro_title".tr(),
-              style: GoogleFonts.jetBrainsMono(
-                textStyle: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: isDarkMode ? Colors.white : Colors.black,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: myHeight,
+          width: myWidth,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Flexible(
+                child: Image.asset(
+                  'assets/imgs/icon.png',
+                  height: 250,
+                  width: 250,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 40),
-              child: SizedBox(
-                height: 35,
-                width: 180,
-                child: ElevatedButton.icon(
-                  icon: Icon(
-                    Icons.next_plan,
-                    color: isDarkMode ? Colors.black : Colors.white,
+              Center(
+                child: Text(
+                  "intro_title".tr(),
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.jetBrainsMono(
+                    textStyle: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: isDarkMode ? Colors.white : Colors.black,
+                    ),
                   ),
-                  iconAlignment: IconAlignment.end,
-                  label: Text(
-                    "intro_button".tr(),
-                    style: TextStyle(
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: SizedBox(
+                  height: 35,
+                  width: 180,
+                  child: ElevatedButton.icon(
+                    icon: Icon(
+                      Icons.next_plan,
                       color: isDarkMode ? Colors.black : Colors.white,
-                      fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
-                      fontSize: 14,
                     ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        isDarkMode ? Colors.grey[300] : Colors.blueGrey[800],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
+                    iconAlignment: IconAlignment.end,
+                    label: Text(
+                      "intro_button".tr(),
+                      style: TextStyle(
+                        color: isDarkMode ? Colors.black : Colors.white,
+                        fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
+                        fontSize: 14,
                       ),
-                    );
-                  },
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor:
+                          isDarkMode ? Colors.grey[300] : Colors.blueGrey[800],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
